@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recomendador de Música</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #7f4ca5;
+    }
+
+    .band {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    label {
+      flex: 1;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4b1c71;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    ul#recommendations {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul#recommendations li {
+      background-color: #e8f5e9;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Califica los grupos musicales</h1>
+  <form id="ratingForm">
+    <div id="bandsContainer"></div>
+    <button type="button" onclick="processData()">Procesar</button>
+  </form>
+  <h2>Recomendaciones:</h2>
+  <ul id="recommendations"></ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
